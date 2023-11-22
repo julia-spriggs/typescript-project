@@ -1,5 +1,5 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import AdEntity from "./Ad.entity";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+//import AdEntity from "./Ad.entity";
 
 @Entity()
 class Tag {
@@ -9,9 +9,9 @@ class Tag {
     @Column({ unique: true })
     name: string;
 
-    @ManyToMany(() => AdEntity, (ad) => ad.tags, { cascade: true})
-    @JoinTable()
-    ads: AdEntity[];
+    //@ManyToMany(() => AdEntity, (ad) => ad.tags, { cascade: true})
+    //@JoinTable()
+    //ads: AdEntity[];
 }
 
 export default Tag;

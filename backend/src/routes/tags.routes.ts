@@ -7,10 +7,9 @@ const router = Router();
 
 router.post('/create', async function (req: Request, res: Response) {
     try {
-        const { name, ads }: TagCreateInput = req.body;
+        const { name }: TagCreateInput = req.body;
         const result: Tag[] = await new TagsServices().create({
             name,
-            ads,
         });
         res.send(result);
     } catch (err: any) {
